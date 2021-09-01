@@ -1,13 +1,8 @@
 const mongoose = require("mongoose")
 
-const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
-
-const BlogPost = new Schema({
-  author: ObjectId,
-  title: String,
-  body: String,
-  date: Date
+const BlogPost = mongoose.Schema({
+  name: String,
+  age: Number
 });
 
-module.exports = BlogPost
+module.exports = mongoose.model('Post', BlogPost);
